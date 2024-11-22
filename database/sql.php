@@ -1,10 +1,11 @@
 <?php
 $servername = "localhost";
-$username = "admin";
-$password = "12345678";
+$username = "cadastro_notas";
+$password = "C@dastro123";
+$database = "cadastro_notas";
 
 // Create connection
-$conn = mysqli_connect($servername,$username, $password);
+$conn = mysqli_connect($servername,$username, $password, $database);
 
 // Check connection
 if (!$conn) {
