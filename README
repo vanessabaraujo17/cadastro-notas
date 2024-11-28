@@ -1,2 +1,16 @@
+# Dependencias
+É necessario ter `docker` e `docker-compose` instalados, caso não possua verifique as documentações abaixo
+ - [docker](https://docs.docker.com/engine/install/)
+ - [docker-compose](https://docs.docker.com/compose/install/)
+
+# Executando
 Para executar digite:
-~~ php index.php
+```
+docker-compose up -d
+```
+
+Para encerrar digite:
+```
+docker-compose down
+```
+

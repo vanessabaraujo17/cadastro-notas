@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: my_secret_pw_shh
+      MYSQL_DATABASE: cadastro_notas
+      MYSQL_USER: cadastro_notas
+      MYSQL_PASSWORD: C@dastro123
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./dump:/docker-entrypoint-initdb.d
+      - persistent:/var/lib/mysql
+    networks:
+        - default
+  www:
+    build: .
+    ports: 
+        - "8001:80"
+    volumes:
+        - ./www:/var/www/html/
+    links:
+        - db
+    networks:
+        - default
+volumes:
+    persistent:
